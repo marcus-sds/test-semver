@@ -1,0 +1,18 @@
+---
+resources:
+- name: resource-version
+  type: semver
+  source:
+    driver: git
+    initial_version: 0.0.1
+    uri: https://github.com/marcus-sds/test-semver
+    branch: master
+    file: version
+    private_key: {{github-private-key}}
+
+jobs:
+- name: job-versioning
+  public: true
+  serial: true
+  plan:
+  - get: resource-version
