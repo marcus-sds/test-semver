@@ -8,6 +8,7 @@ resources:
     uri: https://github.com/marcus-sds/test-semver
     branch: master
     file: version
+    username: atplus12345@gmail.com
     private_key: {{github-private-key}}
 
 jobs:
@@ -18,4 +19,4 @@ jobs:
   - get: resource-version
     params: {pre: rc}
   - put: resource-version
-    params: {file: resource-version/number}
+    params: {file: resource-version/version}
